@@ -115,11 +115,11 @@ button.addEventListener("click", function () {
             if (bombs.includes(parseInt(cell.innerText))) {
                 cell.classList.remove("clicked");
                 cell.classList.add("clickedbomb");
-                console.log(`Sei esploso! Game over! il tuo punteggio è ${cellNumber}`)
+                alert(`Sei esploso! Game over! il tuo punteggio è ${cellNumber}`)
             }
 
             if (!(bombs.includes(parseInt(cell.innerText))) && cellNumber === 84) {
-                console.log("Complimenti, hai vinto!");
+                alert("Complimenti, hai vinto!");
             }
         })
 
