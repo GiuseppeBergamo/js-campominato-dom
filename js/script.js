@@ -118,7 +118,9 @@ button.addEventListener("click", function () {
                 console.log(`Sei esploso! Game over! il tuo punteggio è ${cellNumber}`)
             }
 
-
+            if (!(bombs.includes(parseInt(cell.innerText))) && cellNumber === 84) {
+                console.log("Complimenti, hai vinto!");
+            }
         })
 
         grid.appendChild(cell);
