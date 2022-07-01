@@ -23,3 +23,7 @@ main {
 .cell.clicked {
     background-color: cornflowerblue;
 }
+
+.cell.clickedbomb {
+    background-color: darkred;
+}
