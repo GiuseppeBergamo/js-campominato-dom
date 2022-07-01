@@ -76,14 +76,35 @@ const createCell = (number) => {
 }
 
 
+const getRandomNumbers = (min = 1, max = 100, blacklist) => {
+    let randomNumber;
+    let i = 0;
+    do {
+        randomNumber = Math.floor(Math.random() * (max + 1 - min)) + min;
+        blacklist.push(randomNumber);
+        console.log(randomNumber, blacklist);
+        i++;
+    } while (i < 16 && blacklist.includes(randomNumber));
+
+
+
+    return randomNumber;
+}
+
 const rows = 10;
 const cells = 10;
 const totalCells = rows * cells;
 let cellNumber = 0;
+const bombList = [];
+const bombs = getRandomNumbers(1, 100, bombList);
+bombList.push(bombs);
+console.log(bombList);
 
 button.addEventListener("click", function () {
     for (i = 1; i <= totalCells; i++) {
         const cell = createCell(i);
+
+
 
         cell.addEventListener("click", function () {
             cell.classList.toggle("clicked");
@@ -92,6 +113,8 @@ button.addEventListener("click", function () {
 
             console.log(`il tuo punteggio è ${cellNumber}`)
             console.log("hai cliccato la cella numero: " + cell.innerText);
+
+
         })
 
         grid.appendChild(cell);
