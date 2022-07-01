@@ -110,12 +110,15 @@ button.addEventListener("click", function () {
 
             cellNumber++;
 
-            console.log(`il tuo punteggio è ${cellNumber}`)
             console.log("hai cliccato la cella numero: " + cell.innerText);
 
-            if (bombs.includes(cell.innerText)) {
-                cell.classList.toggle("clickedbomb");
+            if (bombs.includes(parseInt(cell.innerText))) {
+                cell.classList.remove("clicked");
+                cell.classList.add("clickedbomb");
+                console.log(`Sei esploso! Game over! il tuo punteggio è ${cellNumber}`)
             }
+
+
         })
 
         grid.appendChild(cell);
